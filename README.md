@@ -12,12 +12,7 @@ tensorflow( >=1.0)
 scipy
 numpy
 ```
-## Usage
-```
-cd pokeGAN
-node massaged_images.js
-python pokeGAN.py
-```
+
 ### NOTES
 This project used to take a **whole boatload** of setup, and I got kinda fed up with the python dev environment's lack of *give a shit* for the end-users time and versioning requirements.
 
@@ -25,10 +20,17 @@ It's very very likely that I'll be doing some more rewrites as I move forward wi
 
 ### CUDA INSTALLATION (windows):
 1. Download **64 bit** [python 3.5.x](https://www.python.org/downloads/windows/)
+1. Download [**NODE 9**](https://nodejs.org/en/download/) (because seriously, node is sick these days)
 2. Download **CUDA 9.0** [drivers](https://developer.nvidia.com/cuda-toolkit)
 3. install `pip install tf-nightly-gpu` from the command line
 4. Download the [CuDNN libs](https://developer.nvidia.com/cudnn) and put the unzipped files into your `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0` files in the same folder nesting they come in
-5. test tensorflow with this repo (:
+
+##### Then:
+1. npm i -g yarn (not strictly-speaking necessary, but i haven't dropped the habit yet)
+2. yarn install (or npm install if you didn't want to add yarn)
+3. node massage_images.js
+4. python pokeGAN.py
+5. you're now testing tensorflow with this repo (:
 
 ## example pokemon
 ![image1](https://github.com/moxiegushi/pokeGAN/raw/master/images/Notes_1500532347861.jpeg)
