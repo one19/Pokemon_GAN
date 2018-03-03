@@ -25,17 +25,27 @@ It's very very likely that I'll be doing some more rewrites as I move forward wi
 4. Download the [CuDNN libs](https://developer.nvidia.com/cudnn) and put the unzipped files into your `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0` files in the same folder nesting they come in
 
 ##### Then:
-1. npm i -g yarn (not strictly-speaking necessary, but i haven't dropped the habit yet)
-2. yarn install (or npm install if you didn't want to add yarn)
-3. node massage_images.js
-4. python pokeGAN.py
+1. `npm i -g yarn` (not strictly-speaking necessary, but i haven't dropped the habit yet)
+2. `yarn` (or `npm install` if you didn't want to add yarn)
+3. `node massage_images.js`
+4. `python pokeGAN.py`
 5. you're now testing tensorflow with this repo (:
 
 ## example pokemon
 My first run after 4950 epochs!
 ![image1](https://github.com/one19/Pokemon_GAN/raw/master/epoch4950.jpeg)
 
+#### Issues:
+1. Iteration doesn't include the final run iteration, meaning models aren't exported on 5000 as expected
+2. There's *no* documentation on how to use an exported model to generate a file
+3. There's *no* dodumentation on how to continue a training session from an existing model
+
+#### WOULD LIKE TODO:
+1. add another stream of meta information to the convolutions ({ pokemonType, fastOrSlow, height })
+2. grab images/metaInfo from https://pokeapi.co/ pre-transformation instead of a data folder
+3. Include all pokemon in the training set
 
 ## Credits
 
-The credits for this code go to [moxiegushi](https://github.com/moxiegushi/pokeGAN). I've merely created a wrapper to get people started. 
+The credits for this code go to [moxiegushi](https://github.com/moxiegushi/pokeGAN) and [||source||](https://github.com/llSourcell/Pokemon_GAN).
+They did the hard work, and I'm just translating some of bits into something that makes it easier for a muppet like me to understand (or people more familiar with standard javascript stuff).
