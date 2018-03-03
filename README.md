@@ -32,9 +32,9 @@ It's very very likely that I'll be doing some more rewrites as I move forward wi
 5. you're now testing tensorflow with this repo (:
 
 ## example pokemon
-![image1](https://github.com/moxiegushi/pokeGAN/raw/master/images/Notes_1500532347861.jpeg)
+My first run after 4950 epochs!
+![image1](https://github.com/one19/Pokemon_GAN/raw/master/epoch4950.jpeg)
 
-![image2](https://github.com/moxiegushi/pokeGAN/raw/master/images/Notes_1500532371830.jpeg)
 
 ## Credits
 
