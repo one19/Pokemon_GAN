@@ -5,7 +5,6 @@ This is the code for [this](https://youtu.be/yz6dNf7X7SA) video on Youtube by Si
 
 ## NEW Dependencies (pip install) 
 ```
-(the project initally required `pillow` and `opencv-python`, neither of which were listed)
 node ( >=8.0)
 tensorflow( >=1.0)
 (CUDA drivers, because running this on a CPU is far far far too slow to be practical or economical)
