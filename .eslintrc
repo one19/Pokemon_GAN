@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "prettier",
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "arrow-parens": "off",
+    "no-bitwise": "off",
+    "no-plusplus": "off",
+    "no-restricted-globals": "off",
+    "no-restricted-syntax": "off",
+    "no-confusing-arrow": "off"
+  }
+}
