@@ -1,6 +1,7 @@
 const axios = require('axios');
 const jimp = require('jimp');
 const fs = require('fs');
+const { getAddress } = require('./nightmare_crawl');
 
 const TYPES = require('./types');
 const POKE_URL = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full';
@@ -9,7 +10,7 @@ const duoHexStringify = (stat) => Math.round(Number.parseInt(stat, 10)).toString
 
 const saveImage = async (url, pokeNumber, type, dimension) =>
   jimp.read(url).then(image => {
-    const resizedBlackBackground = image.background(0xFFFFFFFF).rgba(false).resize(dimension, dimension);
+    const resizedBlackBackground = image.background(0xFFFFFFFF).rgba(false).autocrop().resize(dimension, dimension);
     resizedBlackBackground.write(`seed_data/${type}/color/${pokeNumber}.png`);
     return resizedBlackBackground.dither565().greyscale().write(`seed_data/${type}/grey/${pokeNumber}.png`);
   });
@@ -64,4 +65,9 @@ module.exports.getPokemon = async pokeNumber => {
   fs.writeFileSync(`seed_data/bins/${paddedNumber}`, metaBin);
   await saveImage(front_default, paddedNumber, 'icon', 96);
   await saveImage(`${POKE_URL}/${paddedNumber.padStart(3, 0)}.png`, paddedNumber, 'art', 475);
+
+  try {
+    const modeledImageSrc = await getAddress(paddedNumber);
+    await saveImage(modeledImageSrc, paddedNumber, '3d', 240);
+  } catch (e) {}
 };

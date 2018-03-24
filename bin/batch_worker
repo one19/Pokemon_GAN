@@ -12,7 +12,6 @@ const { argv } = process;
 */
 const batch = async () => {
   const url = argv[2];
-  console.log('url', url)
   const { data: { count, results } } = await axios.get(url);
 
   await Promise.all(results.map(singlePoke => {
@@ -24,4 +23,3 @@ const batch = async () => {
 };
 
 batch();
-
