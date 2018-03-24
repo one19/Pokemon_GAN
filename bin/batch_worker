@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+const axios = require('axios');
+
+const { getPokemon } = require('../image_manip/generate_seed_image');
+const { argv } = process;
+
+/*
+* Function that starts grabbing and processing all pokemon on a single page response
+* since pokeapi/pokemon returns paginated numbers of pokemon to grab, 20 at a time
+* @param {String} url
+* return {String|null} next-page url
+*/
+const batch = async () => {
+  const url = argv[2];
+  console.log('url', url)
+  const { data: { count, results } } = await axios.get(url);
+
+  await Promise.all(results.map(singlePoke => {
+    const pokeNum = singlePoke.url.replace(/\/$/, '').match(/\d+$/ig)[0];
+    return getPokemon(Number.parseInt(pokeNum, 10));
+  }));
+  const percent = Math.round(100 * Number.parseInt(url.match(/\d+$/) ? url.match(/\d+$/)[0] : 0, 10) / count);
+  return console.log(`${percent}% done!`);
+};
+
+batch();
+
