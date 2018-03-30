@@ -125,7 +125,7 @@ def discriminator(input, is_train, reuse=False):
                                  kernel_initializer=tf.truncated_normal_initializer(stddev=0.02),
                                  name='conv1')
         bn1 = tf.contrib.layers.batch_norm(conv1, is_training = is_train, epsilon=1e-5, decay = 0.9,  updates_collections=None, scope = 'bn1')
-        act1 = lrelu(conv1, n='act1')
+        act1 = lrelu(bn1, n='act1')
          #Convolution, activation, bias, repeat! 
         conv2 = tf.layers.conv2d(act1, c4, kernel_size=[5, 5], strides=[2, 2], padding="SAME",
                                  kernel_initializer=tf.truncated_normal_initializer(stddev=0.02),

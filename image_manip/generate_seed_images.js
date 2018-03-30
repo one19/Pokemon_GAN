@@ -8,7 +8,7 @@ const MAX_INDEX = 720;
 * So, what's going on here then? First up, we lazily prep the seed_data folder, and bin folder within
 * `jimp` recursively creates folders, but `fs` doesn't
 * 
-* Then we go ahead and start  
+* Then we go ahead and start reading all the images out of a couple sites.
 */
 const startMultiBatching = async (size) => {
   try {
@@ -33,6 +33,7 @@ const startMultiBatching = async (size) => {
       console.log('RREEEeeeeeeeeee', e);
     }
   }
+
 };
 
 startMultiBatching(4);

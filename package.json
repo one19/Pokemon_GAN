@@ -2,7 +2,8 @@
   "version": "0.0.0",
   "name": "pokemon-gan-119",
   "scripts": {
-    "start": "node image_manip/generate_seed_images.js"
+    "seed": "node image_manip/generate_seed_images.js || true && node image_manip/fix_seed_images.js",
+    "seedfix": "node image_manip/fix_seed_images.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
