@@ -8,8 +8,7 @@
     "axios": "^0.18.0",
     "child-process-promise": "^2.2.1",
     "jimp": "^0.2.28",
-    "jsdom": "^11.6.2",
-    "nightmare": "^3.0.0"
+    "jsdom": "^11.6.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
