@@ -1,5 +1,10 @@
 # pokeGAN
 
+
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/Pokemon_GAN/maintained.svg?sanitize=true)](https://github.com/one19/project-status)
+
+---
+
 ## Overview
 This is the code for [this](https://youtu.be/yz6dNf7X7SA) video on Youtube by Siraj Raval. We'll use a WGAN to create new kinds of Pokemon. 
 
